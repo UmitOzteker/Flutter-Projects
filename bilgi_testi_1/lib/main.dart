@@ -1,5 +1,5 @@
-import 'package:bilgi_testi/test-veri.dart';
 import 'package:flutter/material.dart';
+
 import 'constants.dart';
 
 void main() => runApp(BilgiTesti());
@@ -25,40 +25,18 @@ class SoruSayfasi extends StatefulWidget {
 
 class _SoruSayfasiState extends State<SoruSayfasi> {
   List<Widget> secimler = [];
+  
+  List <Soru> soruBankasi = [
+  Soru(soruMetni:"Titanic gelmiş geçmiş en büyük gemidir",soruYaniti: false),
+  Soru(soruMetni:"Dünyadaki tavuk sayısı insan sayısından fazladır",soruYaniti: true ),
+  Soru(soruMetni:"Kelebeklerin ömrü bir gündür",soruYaniti: false ),
+  Soru(soruMetni:"Dünya düzdür",soruYaniti: false ),
+  Soru(soruMetni:"Kaju fıstığı aslında bir meyvenin sapıdır",soruYaniti: false ),
+  Soru(soruMetni:"Fatih Sultan Mehmet hiç patates yememiştir",soruYaniti: true ),
+  Soru(soruMetni:"Fransızlar 80 demek için, 4 - 20 der",soruYaniti: true ),
+];
 
-  TestVeri test_1 = TestVeri();
-  void butonFonksiyonu(bool secilenButon) {
-    if (test_1.testBittiMi() == true) {
-      showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text("TESTİ BİTİRDİNİZ"),
-              //content: Text("sdadass"),
-              actions: [
-                TextButton(
-                    child: Text("BAŞA DÖN"),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-
-                      setState(() {
-                        test_1.testiSifirla();
-                        secimler[0];
-                      });
-                    }),
-              ],
-            );
-          });
-    } else {
-      setState(() {
-        test_1.getSoruYaniti() == secilenButon
-            ? secimler.add(kDogruIconu)
-            : secimler.add(kYanlisIconu);
-        test_1.sonrakiSoru();
-      });
-    }
-  }
-
+ int soruIndex=0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -71,7 +49,7 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                test_1.getSoruMetni().toString(),
+              soruBankasi[soruIndex].soruMetni.toString(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20.0,
@@ -87,7 +65,7 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
           spacing: 3,
           direction: Axis.horizontal,
           children: secimler,
-        ),
+          ),
         Expanded(
           flex: 1,
           child: Padding(
@@ -106,7 +84,13 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
                             size: 30.0,
                           ),
                           onPressed: () {
-                            butonFonksiyonu(false);
+                            setState(() {
+                              soruBankasi[soruIndex].soruYaniti==true
+                              ?secimler.add(kDogruIconu)
+                              :secimler.add(kYanlisIconu);
+                              soruIndex++;
+                              //secimler.add(kYanlisIconu);
+                            });
                           },
                         ))),
                 Expanded(
@@ -119,7 +103,12 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
                           ),
                           child: Icon(Icons.thumb_up, size: 30.0),
                           onPressed: () {
-                            butonFonksiyonu(true);
+                            setState(() {
+                              soruBankasi[soruIndex].soruYaniti==false
+                              ?secimler.add(kDogruIconu)
+                              :secimler.add(kYanlisIconu);
+                              soruIndex++;                              
+                            });
                           },
                         ))),
               ])),
@@ -127,4 +116,13 @@ class _SoruSayfasiState extends State<SoruSayfasi> {
       ],
     );
   }
+}
+   
+
+
+class Soru{
+  String? soruMetni;
+  bool? soruYaniti;
+ 
+  Soru({@required this.soruMetni,this.soruYaniti});
 }
