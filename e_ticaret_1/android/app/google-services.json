@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "280201852045",
+    "project_id": "eticaret-84438",
+    "storage_bucket": "eticaret-84438.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280201852045:android:40d547c8523853d0cd1ec4",
+        "android_client_info": {
+          "package_name": "com.example.e_ticaret_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280201852045-k8086lmligijtphblk31hadftpifmdrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCj7F4O08G2U3_7oWq-9gY-JJTNkTr6Q_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280201852045-k8086lmligijtphblk31hadftpifmdrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
