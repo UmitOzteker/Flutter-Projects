@@ -1,20 +1,19 @@
-
+import 'package:e_ticaret/customer_girisi.dart';
+import 'package:e_ticaret/musteri_giris.dart';
+import 'package:e_ticaret/register_page.dart';
+import 'package:e_ticaret/sat%C4%B1c%C4%B1_giris.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-import 'musteri_girisi.dart';
-
-class LoginPage extends StatefulWidget {
-  final VoidCallback ShowRegisterPage;
-  const LoginPage({super.key, required this.ShowRegisterPage});
+class SaticiLoginPage extends StatefulWidget {
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SaticiLoginPage> createState() => _SaticiLoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SaticiLoginPageState extends State<SaticiLoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -113,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> GirisPage()),);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> SaticiGirisPage()),);
                   },
                   child: AbsorbPointer(
                     child: Container(
@@ -142,7 +141,8 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text("Üye değil misiniz?"),
                   GestureDetector(
-                    onTap: (){widget.ShowRegisterPage;},
+                    onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=> SaticiGirisPage()),);
+                            },
                     child: Text(
                       " Şimdi Kaydolun",
                       style: TextStyle(

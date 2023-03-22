@@ -17,11 +17,12 @@ class _BottomBarPageState extends State<BottomBarPage> {
   TextEditingController yorumController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    CollectionReference yorumlarRef = _firestore.collection("Yorumlar");
+     CollectionReference urunlerRef = _firestore.collection("urunler");
+    var bilgisayarRef = urunlerRef.doc("hpvictus");
     return Column(
       children: [
         StreamBuilder<QuerySnapshot>(
-            stream: yorumlarRef.snapshots(),
+            stream: urunlerRef.snapshots(),
             builder: (BuildContext context, AsyncSnapshot asyncSnapshot) {
               List<DocumentSnapshot> listofDocumentSnap =
                   asyncSnapshot.data.docs;
@@ -31,7 +32,7 @@ class _BottomBarPageState extends State<BottomBarPage> {
                   itemBuilder: (context, index) {
                     return Card(
                       child: ListTile(
-                        title: Text("Yorumlar"),
+                        title: Text("yorumlar yazılacak"),
                       ),
                     );
                   });
@@ -39,7 +40,10 @@ class _BottomBarPageState extends State<BottomBarPage> {
         TextField(
           controller: yorumController,
           decoration: InputDecoration(hintText: "Yorum Yazınız"),
-        )
+        ),
+        ElevatedButton(onPressed: (){
+
+        }, child: Text("Yorum Yap"))
       ],
     );
   }

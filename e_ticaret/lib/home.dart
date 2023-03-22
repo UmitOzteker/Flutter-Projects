@@ -1,4 +1,6 @@
 import 'package:e_ticaret/login.dart';
+import 'package:e_ticaret/sat%C4%B1c%C4%B1_giris.dart';
+import 'package:e_ticaret/satici_login.dart';
 import 'package:flutter/material.dart';
 
 import 'musteri_giris.dart';
@@ -34,7 +36,7 @@ class HomePage extends StatelessWidget {
                   child: SizedBox(
                     height: double.maxFinite,
                     child: TextButton(
-                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage(ShowRegisterPage: () {  },)),);},
+                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> SaticiLoginPage()),);},
                       child: Container(
                         child: Text(
                           "Satıcı Girişi",

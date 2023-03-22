@@ -6,8 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class CustomerPage extends StatefulWidget {
-  final VoidCallback ShowRegisterPage;
-  const CustomerPage({super.key, required this.ShowRegisterPage});
+  const CustomerPage({super.key, });
 
   @override
   State<CustomerPage> createState() => _CustomerPageState();
@@ -141,9 +140,9 @@ class _CustomerPageState extends State<CustomerPage> {
                 children: [
                   Text("Üye değil misiniz?"),
                   GestureDetector(
-                    onTap: (){widget.ShowRegisterPage;},
+                    onTap: (){Navigator.pop(context);},
                     child: Text(
-                      " Şimdi Kaydolun",
+                      " Zaten Üyeyim",
                       style: TextStyle(
                           color: Colors.blue, fontWeight: FontWeight.bold),
                     ),

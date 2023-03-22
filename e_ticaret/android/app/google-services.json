@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "942928270260",
-    "project_id": "e-ticaret-3f98e",
-    "storage_bucket": "e-ticaret-3f98e.appspot.com"
+    "project_number": "308259896941",
+    "project_id": "eticaret-8ba9a",
+    "storage_bucket": "eticaret-8ba9a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:942928270260:android:f3641d22f37330c19a58e1",
+        "mobilesdk_app_id": "1:308259896941:android:b65329acc9498699048964",
         "android_client_info": {
           "package_name": "com.android.application"
         }
       },
       "oauth_client": [
         {
-          "client_id": "942928270260-345eqfeqpp34je0gni89d8ak6sif8jef.apps.googleusercontent.com",
+          "client_id": "308259896941-ge1km0a7sa56h288rr52jp8vfjke0nkm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBsAJ5PFOqQno_E-orzATuaGTzX4JFQOJU"
+          "current_key": "AIzaSyCir-0JOBDVjws9ssLHy_AMdL0PgICj-6M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "942928270260-345eqfeqpp34je0gni89d8ak6sif8jef.apps.googleusercontent.com",
+              "client_id": "308259896941-ge1km0a7sa56h288rr52jp8vfjke0nkm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
